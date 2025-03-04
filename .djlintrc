@@ -1,0 +1,4 @@
+{
+  "profile": "django",
+  "ignore":"H006,H013,H026,H029,H020,H030,H031,H021,D018"
+}

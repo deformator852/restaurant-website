@@ -1,0 +1,25 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock styles %}
+{% block content %}
+    <div class="welcome-block">
+        <div class="welcome-block__inner">
+            <div class="welcome-text">
+                <div class="welcome-heading primary">Welcome to</div>
+                <div class="welcome-heading secondary">RestoNest</div>
+                <p class="welcome-description">
+                    Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                </p>
+                <a class="view-menu-button" href="#">
+                    <div>View Menu</div>
+                </a>
+            </div>
+            <div class="welcome-block-image">
+                <img src="{% static 'home/img/welcome-arch.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="restaurant-information-block"></div>
+{% endblock content %}
