@@ -1,4 +1,5 @@
 {% extends "home/base.html" %}
+{% load custom_tags %}
 {% load static %}
 {% block styles %}
     <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
@@ -128,5 +129,11 @@
                 Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content making.
             </p>
         </div>
+        <div class="popular-dishes-items">
+            {% for product in popular_dishes %}
+                {% show_product product.image product.price product.name %}
+            {% endfor %}
+        </div>
+        <div class="see-all-dishes">See all dishes</div>
     </div>
 {% endblock content %}

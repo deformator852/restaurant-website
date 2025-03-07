@@ -1,6 +1,22 @@
 @import "base.scss";
 
 .popular-dishes-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .see-all-dishes {
+    font-family: "Karla";
+    font-weight: bold;
+    font-size: 22px;
+    width: 241px;
+    height: 68px;
+    background-color: #ff9900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+  }
+
   width: 1108px;
   &__sub-title {
     display: flex;
@@ -29,6 +45,11 @@
       width: 702px;
       text-align: center;
     }
+  }
+
+  .popular-dishes-items {
+    margin-bottom: 80px;
+    display: flex;
   }
 }
 .restaurant-story-info {
@@ -123,7 +144,7 @@
 
 .restaurant-information-block {
   margin-top: 220px;
-  height: 672px;
+  height: 630px;
 }
 
 .welcome-block-image {

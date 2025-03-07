@@ -4,10 +4,11 @@ from django.conf import settings
 register = template.Library()
 
 
-# @register.inclusion_tag("quiz/include/quizzes_list.html")
-# def show_quizzes():
-#     # quizzes = Quiz.objects.all()
-#     return {
-#         "quizzes": quizzes,
-#         "MEDIA_URL": settings.MEDIA_URL,
-#     }
+@register.inclusion_tag("home/include/product.html")
+def show_product(img, price, name):
+    return {
+        "img": img,
+        "price": "$" + str(price),
+        "name": name,
+        "MEDIA_URL": settings.MEDIA_URL,
+    }

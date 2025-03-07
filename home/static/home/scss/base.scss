@@ -6,6 +6,60 @@
   box-sizing: border-box;
 }
 
+.product {
+  width: 326px;
+  height: 432px;
+  position: relative;
+  font-family: "Karla";
+  .product-price {
+    color: #ff9900;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  .order {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .product-name {
+    margin-top: 28px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .order-product {
+    color: black;
+    font-size: 13px;
+    font-weight: medium;
+    div {
+      background-color: #ff9900;
+      border-radius: 5px;
+      width: 127px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &:not(.product:last-child) {
+    margin-right: 50px;
+  }
+  &-info {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 130px;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+  }
+  &-image {
+    width: 326px;
+    height: 303px;
+  }
+}
+
 .footer__info {
   margin-bottom: 100px;
 }
