@@ -1,5 +1,120 @@
 @import "base.scss";
 
+.popular-dishes-block {
+  width: 1108px;
+  &__sub-title {
+    display: flex;
+    justify-content: center;
+    p {
+      border-top: 1.5px solid #e1b168;
+      border-bottom: 1.5px solid #e1b168;
+      padding: 4px 7px 1px 12px;
+      letter-spacing: 35%;
+      margin-bottom: 10px;
+    }
+  }
+  &__title {
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+  }
+  &__text {
+    font-size: 20px;
+    color: #555555;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    p {
+      width: 702px;
+      text-align: center;
+    }
+  }
+}
+.restaurant-story-info {
+  margin-left: 25px;
+  font-family: "Karla";
+  display: flex;
+  flex-direction: column;
+  .restaurant-story-title {
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .restaurant-story-text {
+    margin-top: 12px;
+    margin-bottom: 35px;
+    font-size: 15px;
+    color: #555555;
+    max-width: 514px;
+    width: 514px;
+    height: 57px;
+    max-height: 57px;
+  }
+  .restraunt-story-dates {
+    display: flex;
+  }
+  .restraunt-story-dates-start {
+    margin-right: 45px;
+  }
+  .restraunt-story-dates-start,
+  .restraunt-story-dates-current {
+    p:first-child {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    p:last-child {
+      color: #555555;
+      width: 212px;
+    }
+  }
+}
+.restaurant-story {
+  margin-top: 120px;
+  display: flex;
+  .restaurant-story-image {
+    padding-right: 35px;
+    border-right: 2px solid #b29a90;
+  }
+}
+
+.locate-info,
+.open-hours-info,
+.reservation-info {
+  font-family: "Karla";
+  p:first-child {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  p:last-child {
+    color: #4a4a4a;
+    font-size: 13px;
+  }
+}
+
+.locate-hours-reservation-inner {
+  width: 1090px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.locate,
+.reservation,
+.open-hours {
+  display: flex;
+  .info-circle {
+    margin-right: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff9900;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+  }
+}
+
 .main {
   display: flex;
   justify-content: center;
@@ -7,7 +122,8 @@
 }
 
 .restaurant-information-block {
-  height: 1692px;
+  margin-top: 220px;
+  height: 672px;
 }
 
 .welcome-block-image {
