@@ -1,5 +1,256 @@
 @import "base.scss";
 
+.reservation-block {
+  height: 736px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .book-table-button {
+    margin-top: 30px;
+    width: 232px;
+    height: 68px;
+    border: none;
+    background-color: #ff9900;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Karla";
+    font-size: 22px;
+    font-weight: bold;
+    color: #292e36;
+  }
+  .reservation-form {
+    z-index: 1;
+    width: 806px;
+    height: 647px;
+    .reservation-form-sub-title {
+      font-size: 15px;
+      font-weight: medium;
+      font-family: "Josefin Sans";
+      line-height: 77%;
+      letter-spacing: 27%;
+      color: white;
+      border-top: 1px solid #e1b168;
+      padding-top: 9px;
+      margin-bottom: 15px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid #e1b168;
+    }
+    .name-email {
+      margin-top: 35px;
+    }
+    input {
+      padding-left: 17px;
+      color: black;
+      &::placeholder {
+        color: black;
+      }
+      font-size: 20px;
+      border: 1px solid black;
+      border-radius: 6px;
+      &:focus {
+        outline: none;
+      }
+    }
+    .person-timing-date {
+      input {
+        margin-top: 20px;
+        width: 232px;
+        height: 68px;
+        &:not(input:last-child) {
+          margin-right: 20px;
+        }
+      }
+    }
+    .name-input,
+    .email-input {
+      width: 358px;
+      height: 68px;
+    }
+    .email-input {
+      margin-left: 25px;
+    }
+    .reservation-form-title {
+      color: white;
+      font-weight: bold;
+      font-size: 40px;
+      font-family: "Karla";
+      line-height: 77%;
+    }
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+  .reservation-form-layer {
+    position: absolute;
+    z-index: 0;
+    width: 806px;
+    height: 647px;
+    background-color: white;
+    opacity: 47%;
+  }
+}
+.testimonial-block {
+  margin-top: 125px;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .client-name {
+    line-height: 77%;
+    margin-top: 9px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: white;
+  }
+  .client-city {
+    font-family: "Josefin Sans", "sans-serif";
+    color: #e1b168;
+    font-size: 12px;
+    font-weight: regular;
+  }
+  .client-feedback {
+    color: white;
+    font-family: "Karla";
+    font-size: 12px;
+    font-style: italic;
+    line-height: 146%;
+    letter-spacing: 0;
+  }
+  .client-image {
+    margin-right: 20px;
+  }
+  .client-info {
+    display: flex;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #797e89;
+    margin-bottom: 20px;
+  }
+
+  .testimonials {
+    margin-top: 65px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  .testimonial {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 365px;
+    height: 242px;
+    background-color: #343942;
+    margin-right: 30px;
+    border-radius: 7px;
+  }
+  .testimonial-block-sub-title {
+    display: flex;
+    justify-content: center;
+    width: 136px;
+    font-size: 15px;
+    font-weight: medium;
+    letter-spacing: 20%;
+    border-top: 1px solid #e1b168;
+    border-bottom: 1px solid #e1b168;
+    padding-top: 2px;
+  }
+  .testimonial-block-title {
+    font-family: "Karla";
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 7px;
+    margin-bottom: 12px;
+  }
+  .testimonial-block-text {
+    font-family: "Karla";
+    font-size: 20px;
+    font-weight: regular;
+  }
+}
+
+.what-we-offer-block {
+  display: flex;
+  justify-content: center;
+  height: 375px;
+  width: 100%;
+  margin-top: 100px;
+  background-color: #fff6ea;
+  .services-list {
+    display: flex;
+    justify-content: center;
+    .special-menus {
+      margin-left: 80px;
+    }
+    .opened {
+      margin-left: 36px;
+      margin-right: 36px;
+    }
+    .special-menus,
+    .opened,
+    .home-delivery {
+      svg {
+        margin-bottom: 16px;
+      }
+      p {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    & > div {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 150px;
+      height: 150px;
+      background-color: #292e36;
+    }
+  }
+  &-inner {
+    margin-top: 80px;
+    display: flex;
+    width: 1015px;
+  }
+  .what-we-offer-title {
+    font-family: "Karla";
+    font-size: 40px;
+    margin-top: 7px;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  .what-we-offer-text {
+    width: 398px;
+    max-width: 398px;
+    font-size: 20px;
+    font-family: "Karla";
+    font-weight: regular;
+  }
+  .what-we-offer-sub-title {
+    font-family: "Josefin Sans", "sans-serif";
+    width: 155px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-top: 2px;
+    font-size: 15px;
+    font-weight: medium;
+    letter-spacing: 10%;
+  }
+}
+
 .popular-dishes-block {
   display: flex;
   flex-direction: column;
@@ -52,6 +303,7 @@
     display: flex;
   }
 }
+
 .restaurant-story-info {
   margin-left: 25px;
   font-family: "Karla";
@@ -90,6 +342,7 @@
     }
   }
 }
+
 .restaurant-story {
   margin-top: 120px;
   display: flex;
