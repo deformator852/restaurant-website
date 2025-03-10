@@ -1,0 +1,21 @@
+{% load static %}
+<section class="reservation-block"
+         style="background-image: url('{% static 'home/img/reservation-background.png' %}')">
+    <div class="reservation-form-layer"></div>
+    <div class="reservation-form">
+        <form method="GET">
+            <p class="reservation-form-sub-title">RESERVATION</p>
+            <p class="reservation-form-title">Book your table now</p>
+            <div class="name-email">
+                <input class="name-input" type="text" placeholder="Name">
+                <input class="email-input" type="email" placeholder="Email">
+            </div>
+            <div class="person-timing-date">
+                <input class="person-input" type="text" placeholder="Person">
+                <input class="timing-input" type="text" placeholder="Timing">
+                <input class="date-input" type="text" placeholder="Date">
+            </div>
+            <button class="book-table-button" type="submit">Book a Table</button>
+        </form>
+    </div>
+</section>

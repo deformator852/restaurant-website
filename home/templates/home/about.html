@@ -1,0 +1,180 @@
+{% extends "home/base.html" %}
+{% load custom_tags %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'home/css/about.css' %}">
+{% endblock styles %}
+{% block content %}
+    <section class="about-us">
+        <div class="about-us__info">
+            <p class="about-us__sub-title">ABOUT US</p>
+            <p class="about-us__title">Quality and tradition</p>
+            <p class="about-us__text">
+                Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content gfshere making look like readable English. Many desktop publishing packages.
+            </p>
+            <a class="about-us__button" href="#">
+                <div>See More</div>
+            </a>
+        </div>
+        <div class="about-us__image">
+            <img src="{% static 'home/img/about-us-image.png' %}" alt="">
+        </div>
+    </section>
+    <section class="products-description">
+        <div class="products-description__product">
+            <svg width="77"
+                 height="77"
+                 viewBox="0 0 77 77"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.539 72.3158C14.8147 70.1712 10.0457 67.1432 6.58642 62.5917C3.12714 58.0402 1.17189 52.0866 0.0188004 43.9502C-0.00626681 43.8094 -0.00626681 43.6621 0.0188004 43.5213C0.0188004 40.8774 0.933755 38.3232 2.60073 36.3067C3.85409 34.7383 5.64013 33.618 8.04032 32.7474C8.20952 31.0637 8.91767 29.4889 10.0582 28.2662C11.3931 26.8707 13.1352 25.9424 15.0215 25.6288C17.4781 23.1449 20.5927 21.4421 23.9768 20.7187C27.5865 19.8993 31.3466 20.1682 34.8121 21.4869C35.0315 21.5765 35.7459 21.9414 36.3914 22.2743C36.4791 22.3127 36.5543 22.3767 36.6107 22.4536C38.7226 20.7635 41.2669 19.7137 43.9366 19.4384C45.7164 19.2528 47.5212 19.3808 49.2571 19.8289L57.7361 2.48692C58.5069 0.95053 59.7415 -0.521842 62.1229 0.668859C62.7621 0.982538 63.3073 1.46266 63.7021 2.06441C64.7926 3.76724 63.8776 4.95154 63.0755 6.41751L53.8758 21.999C54.5651 22.492 55.1981 23.0681 55.7558 23.7147L55.8248 23.7979C56.7084 24.8222 57.3476 26.0513 57.6735 27.3764C58.4756 27.6069 59.2464 27.8693 59.9734 28.151L70.627 9.99601C71.5168 8.53004 72.8579 7.1665 75.1516 8.54285C75.7657 8.90774 76.2734 9.43267 76.618 10.0664C77.5643 11.8525 76.5679 12.96 75.6279 14.3491L64.4918 30.5708C65.5258 31.3006 66.4721 32.1648 67.2993 33.1315C69.7057 35.8009 70.6834 39.5011 69.9251 43.0412C69.9 43.1436 69.8687 43.246 69.8248 43.342C69.8687 43.4829 69.8937 43.6237 69.8937 43.771C69.8937 43.8286 69.8937 43.8862 69.8937 43.9438C69.6305 50.4798 67.2993 56.7534 63.2509 61.8235C59.566 66.3046 54.1828 70.0688 46.6376 72.3606H46.6V76.2848C46.6 76.5856 46.3556 76.8353 46.0611 76.8353H22.2785C21.8962 76.8353 21.5892 76.5216 21.5829 76.1311V72.335H21.539V72.3158ZM51.5195 39.5331C50.7674 39.5331 50.1596 38.9121 50.1596 38.1439C50.1596 37.3757 50.7674 36.7548 51.5195 36.7548H54.7406C55.4926 36.7548 56.1005 37.3757 56.1005 38.1439C56.1005 38.9121 55.4926 39.5331 54.7406 39.5331H51.5195ZM50.7048 29.9307C51.3879 30.2443 51.6949 31.0573 51.3941 31.7551C51.087 32.4529 50.2912 32.7666 49.6018 32.4593L46.6627 31.1085C45.9796 30.7949 45.6725 29.9819 45.9733 29.2841C46.2804 28.5863 47.0763 28.2726 47.7656 28.5799L50.7048 29.9307ZM34.4111 30.7565C33.7092 30.5004 33.3394 29.713 33.5838 28.9896C33.8345 28.2726 34.6053 27.8949 35.3135 28.1446C35.3511 28.1574 35.3887 28.1766 35.4263 28.1894L38.6537 29.5338C39.3493 29.809 39.694 30.6092 39.4245 31.3198C39.155 32.0304 38.3717 32.3825 37.6761 32.1072C37.6635 32.1008 37.6447 32.0944 37.6322 32.088L34.4111 30.7565ZM33.2329 39.5331C32.4809 39.5331 31.873 38.9121 31.873 38.1439C31.873 37.3757 32.4809 36.7548 33.2329 36.7548H36.454C37.2061 36.7548 37.8139 37.3757 37.8139 38.1439C37.8139 38.9121 37.2061 39.5331 36.454 39.5331H33.2329ZM22.266 32.8818C21.5766 33.1955 20.7682 32.869 20.4611 32.1648C20.1541 31.4606 20.4737 30.6348 21.163 30.3211L24.1022 28.9704C24.7727 28.6247 25.5811 28.9 25.9195 29.585C26.2579 30.2699 25.9885 31.0957 25.3179 31.4414C25.2803 31.4606 25.2427 31.4798 25.1988 31.4926L22.266 32.8818ZM15.949 39.5331C15.197 39.5331 14.5891 38.9121 14.5891 38.1439C14.5891 37.3757 15.197 36.7548 15.949 36.7548H19.1764C19.9285 36.7548 20.5363 37.3757 20.5363 38.1439C20.5363 38.9121 19.9285 39.5331 19.1764 39.5331H15.949ZM3.24621 42.4842H67.2742C67.8382 39.7955 67.0799 36.9916 65.2438 34.9815C63.3637 32.7474 60.2742 30.9229 56.1506 29.8602C55.5929 29.7194 55.1855 29.2393 55.1229 28.6567C54.9913 27.5236 54.5213 26.461 53.7755 25.6096L53.7128 25.5455C52.6099 24.3228 51.2249 23.4074 49.677 22.8889C47.9223 22.2679 46.0548 22.0503 44.2061 22.2487C41.831 22.4856 39.5812 23.465 37.7763 25.0654C37.5257 25.3087 37.1873 25.4431 36.8426 25.4431C36.2472 25.3087 35.6832 25.0782 35.1631 24.7517C34.5928 24.4637 33.9661 24.1116 33.8345 24.1116C30.864 22.9785 27.6366 22.7544 24.5408 23.4714C21.5328 24.1116 18.7879 25.6736 16.6697 27.9526C16.4504 28.2022 16.1496 28.3623 15.8237 28.3943C14.3823 28.5479 13.0412 29.2009 12.0197 30.2507C11.1612 31.1726 10.6786 32.3953 10.6724 33.6692C10.7162 34.3094 10.3277 34.8983 9.72609 35.0904C7.36977 35.8393 5.70906 36.7612 4.67504 38.0543C3.74129 39.3346 3.24621 40.8902 3.24621 42.4842ZM60.6063 49.0779C60.7693 48.5658 61.3082 48.2905 61.8096 48.4569C62.3109 48.6234 62.5804 49.1739 62.4174 49.686C62.4049 49.7373 62.3861 49.7821 62.361 49.8269C61.8973 50.9856 61.3834 52.1251 60.8069 53.2325C60.2366 54.3336 59.6099 55.4027 58.9268 56.4333C58.6636 56.9007 58.0808 57.0607 57.6296 56.7918C57.1721 56.523 57.0154 55.9276 57.2787 55.4667C57.3037 55.4219 57.3288 55.3835 57.3601 55.3451C58.0119 54.3656 58.6135 53.3542 59.1587 52.3107C59.7102 51.2672 60.2115 50.2046 60.6565 49.1099L60.6063 49.0779ZM55.361 57.9953C55.7057 57.5856 56.3136 57.5408 56.7084 57.8993C57.1032 58.2578 57.1533 58.8724 56.8024 59.2757C56.2446 59.9542 55.6618 60.6008 55.0727 61.1961C54.4837 61.7915 53.9071 62.3292 53.2804 62.8542C52.8731 63.2063 52.2652 63.1614 51.9205 62.7453C51.5759 62.3292 51.6197 61.7083 52.0271 61.3562C52.5973 60.8761 53.1614 60.3511 53.7128 59.7942C54.2643 59.2373 54.8158 58.6163 55.3297 57.9953H55.361ZM8.5918 61.0105C11.6625 65.0947 16.0368 67.8346 22.197 69.8127H46.0924C52.9859 67.681 57.9367 64.2561 61.2894 60.1527C64.7362 55.8572 66.8167 50.5823 67.2554 45.0449H2.76366C3.86662 51.9714 5.65893 57.1311 8.5918 61.0105Z" fill="#E1B168" />
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M38.8668 5.06677C39.0297 4.86192 39.2616 4.72748 39.5185 4.69548C39.788 4.65707 40.0637 4.73389 40.2768 4.91313C40.4773 5.07957 40.6089 5.31643 40.6403 5.5789C40.6779 5.85417 40.6027 6.13584 40.4335 6.3535C38.4469 8.90134 42.7083 11.6412 39.4934 15.6486C39.1488 16.0775 38.5284 16.1416 38.1085 15.7895C37.6949 15.4374 37.6385 14.81 37.9706 14.3811C40.4209 11.3276 36.0404 8.79251 38.8981 5.08597L38.8668 5.06677ZM29.4352 5.11158C29.5919 4.90033 29.8238 4.75309 30.0807 4.71468C30.3314 4.68267 30.582 4.74669 30.7888 4.90033C31.0019 5.05397 31.146 5.29723 31.1836 5.55969C31.215 5.81576 31.1523 6.07182 31.0019 6.28308C29.078 8.97176 32.694 11.6028 30.0995 15.5334C29.9491 15.7511 29.7235 15.9047 29.4728 15.9495C29.2096 16.0135 28.9339 15.9559 28.7145 15.8023C28.2633 15.495 28.1442 14.8676 28.4451 14.4067C28.4451 14.4067 28.4451 14.4067 28.4451 14.4003C30.5382 11.2379 26.6277 8.97816 29.3913 5.10518L29.4352 5.11158ZM34.1541 5.10518C34.3045 4.88752 34.5427 4.74029 34.7996 4.70188C35.326 4.61226 35.8274 4.97715 35.9151 5.51488C35.9151 5.52128 35.9151 5.52769 35.9214 5.54049C35.9715 5.80936 35.9088 6.09103 35.7459 6.31508C33.5776 9.34305 37.8202 11.5324 34.7933 15.5846C34.6367 15.7959 34.3985 15.9303 34.1416 15.9623C33.8721 16.0135 33.5964 15.9431 33.3833 15.7703C33.1765 15.6038 33.0449 15.367 33.0073 15.1045C32.9634 14.8292 33.0386 14.5476 33.2016 14.3299C35.4764 11.2763 31.1837 9.19581 34.1103 5.03476L34.1541 5.10518Z" fill="#E1B168" />
+            </svg>
+            <p class="products-description__type">Fresh Product</p>
+            <p class="products-description__text">Professional consider everyone probls small niche friendly.</p>
+            <a class="products-description__see-more" href="#">See more</a>
+        </div>
+        <div class="products-description__product">
+            <svg width="77"
+                 height="78"
+                 viewBox="0 0 77 78"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="77" height="78" fill="url(#pattern0_91_714)" />
+                <rect width="77" height="78" fill="url(#pattern1_91_714)" />
+                <defs>
+                <pattern id="pattern0_91_714" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_91_714" transform="matrix(0.01 0 0 0.00987179 0 0.00641026)" />
+                </pattern>
+                <pattern id="pattern1_91_714" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_91_714" transform="matrix(0.01 0 0 0.00987179 0 0.00641026)" />
+                </pattern>
+                <image id="image0_91_714"
+                       width="100"
+                       height="100"
+                       preserveAspectRatio="none"
+                       xlink:href="data:image/png;base64,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" />
+                </defs>
+            </svg>
+            <p class="products-description__type">Skilled Chefs</p>
+            <p class="products-description__text">Professional consider everyone probls small niche friendly.</p>
+            <a class="products-description__see-more" href="#">See more</a>
+        </div>
+        <div class="products-description__product">
+            <svg width="78"
+                 height="78"
+                 viewBox="0 0 78 78"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="78" height="78" fill="url(#pattern0_91_720)" />
+                <defs>
+                <pattern id="pattern0_91_720" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_91_720" transform="scale(0.01)" />
+                </pattern>
+                <image id="image0_91_720"
+                       width="100"
+                       height="100"
+                       preserveAspectRatio="none"
+                       xlink:href="data:image/png;base64,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" />
+                </defs>
+            </svg>
+            <p class="products-description__type">Drinks&Juices</p>
+            <p class="products-description__text">Professional consider everyone probls small niche friendly.</p>
+            <a class="products-description__see-more" href="#">See more</a>
+        </div>
+        <div class="products-description__product">
+            <svg width="78"
+                 height="78"
+                 viewBox="0 0 78 78"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="78" height="78" fill="url(#pattern0_91_726)" />
+                <defs>
+                <pattern id="pattern0_91_726" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_91_726" transform="scale(0.01)" />
+                </pattern>
+                <image id="image0_91_726"
+                       width="100"
+                       height="100"
+                       preserveAspectRatio="none"
+                       xlink:href="data:image/png;base64,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" />
+                </defs>
+            </svg>
+            <p class="products-description__type">Vegan Cuisine</p>
+            <p class="products-description__text">Professional consider everyone probls small niche friendly.</p>
+            <a class="products-description__see-more" href="#">See more</a>
+        </div>
+    </section>
+    {% include "home/include/restraunt-story.html" %}
+    <section class="team">
+        <p class="team__sub-title">TEAM</p>
+        <p class="team__title">Meet Our Professional Chefs</p>
+        <div class="chefs">
+            <div class="chefs__chef">
+                <div class="chefs__chef-container">
+                    <img class="chefs__chef-image"
+                         src="{% static 'home/img/chief1.png' %}"
+                         alt="">
+                </div>
+                <p class="chefs__chef-name">Avroko</p>
+                <p class="chefs__chef-position">Master Chef</p>
+            </div>
+            <div class="chefs__chef">
+                <div class="chefs__chef-container">
+                    <img class="chefs__chef-image"
+                         src="{% static 'home/img/chief2.png' %}"
+                         alt="">
+                </div>
+                <p class="chefs__chef-name">Evan Mattew</p>
+                <p class="chefs__chef-position">Master Chef</p>
+            </div>
+            <div class="chefs__chef">
+                <div class="chefs__chef-container">
+                    <img class="chefs__chef-image"
+                         src="{% static 'home/img/chief3.png' %}"
+                         alt="">
+                </div>
+                <p class="chefs__chef-name">Diane Clarkson</p>
+                <p class="chefs__chef-position">Master Chef</p>
+            </div>
+            <div class="chefs__chef">
+                <div class="chefs__chef-container">
+                    <img class="chefs__chef-image"
+                         src="{% static 'home/img/chief4.png' %}"
+                         alt="">
+                </div>
+                <p class="chefs__chef-name">Dan Rafalin</p>
+                <p class="chefs__chef-position">Master Chef</p>
+            </div>
+        </div>
+    </section>
+    <section class="galary">
+        <p class="galary__sub-title">GALARY</p>
+        <p class="galary__title">What We Make</p>
+        <div class="galary__images">
+            <div class="galary__image-first">
+                <div class="galary__image">
+                    <img src="{% static 'home/img/galary-image-1.png' %}" alt="">
+                </div>
+                <div style="margin-top:20px;" class="galary__image">
+                    <img src="{% static 'home/img/galary-image-2.png' %}" alt="">
+                </div>
+            </div>
+            <div class="galary__image galary__image-second">
+                <img src="{% static 'home/img/galary-image-3.png' %}" alt="">
+            </div>
+            <div class="galary__image-third">
+                <div class="galary__image">
+                    <img src="{% static 'home/img/galary-image-4.jpg' %}" alt="">
+                </div>
+                <div style="margin-top:20px;"class="galary__image">
+                    <img src="{% static 'home/img/galary-image-5.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include "home/include/reservation-block.html" %}
+{% endblock content %}

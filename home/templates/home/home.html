@@ -95,27 +95,7 @@
                 </div>
             </div>
         </div>
-        <div class="restaurant-story">
-            <img class="restaurant-story-image"
-                 src="{% static 'home/img/story-photo.jpg' %}"
-                 alt="">
-            <div class="restaurant-story-info">
-                <p class="restaurant-story-title">The Story</p>
-                <p class="restaurant-story-text">
-                    Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content gfshere', makinlook like readable English. Many desktop publishing packages.
-                </p>
-                <div class="restraunt-story-dates">
-                    <div class="restraunt-story-dates-start">
-                        <p>1996</p>
-                        <p>Lorem Ipsum is that it has a more-or-less normal distribution</p>
-                    </div>
-                    <div class="restraunt-story-dates-current">
-                        <p>2021</p>
-                        <p>Lorem Ipsum is that it has a more-or-less normal Content content</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include "home/include/restraunt-story.html" %}
     </section>
     <section class="popular-dishes-block">
         <div class="popular-dishes-block__sub-title">
@@ -257,24 +237,5 @@
             </div>
         </div>
     </section>
-    <section class="reservation-block"
-             style="background-image: url('{% static 'home/img/reservation-background.png' %}')">
-        <div class="reservation-form-layer"></div>
-        <div class="reservation-form">
-            <form method="GET">
-                <p class="reservation-form-sub-title">RESERVATION</p>
-                <p class="reservation-form-title">Book your table now</p>
-                <div class="name-email">
-                    <input class="name-input" type="text" placeholder="Name">
-                    <input class="email-input" type="email" placeholder="Email">
-                </div>
-                <div class="person-timing-date">
-                    <input class="person-input" type="text" placeholder="Person">
-                    <input class="timing-input" type="text" placeholder="Timing">
-                    <input class="date-input" type="text" placeholder="Date">
-                </div>
-                <button class="book-table-button" type="submit">Book a Table</button>
-            </form>
-        </div>
-    </section>
+    {% include "home/include/reservation-block.html" %}
 {% endblock content %}

@@ -6,6 +6,152 @@
   box-sizing: border-box;
 }
 
+.restaurant-story-info {
+  margin-left: 25px;
+  font-family: "Karla";
+  display: flex;
+  flex-direction: column;
+  .restaurant-story-title {
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .restaurant-story-text {
+    margin-top: 12px;
+    margin-bottom: 35px;
+    font-size: 15px;
+    color: #555555;
+    max-width: 514px;
+    width: 514px;
+    height: 57px;
+    max-height: 57px;
+  }
+  .restraunt-story-dates {
+    display: flex;
+  }
+  .restraunt-story-dates-start {
+    margin-right: 45px;
+  }
+  .restraunt-story-dates-start,
+  .restraunt-story-dates-current {
+    p:first-child {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    p:last-child {
+      color: #555555;
+      width: 212px;
+    }
+  }
+}
+
+.restaurant-story {
+  margin-top: 120px;
+  display: flex;
+  .restaurant-story-image {
+    padding-right: 35px;
+    border-right: 2px solid #b29a90;
+  }
+}
+.reservation-block {
+  height: 736px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .book-table-button {
+    margin-top: 30px;
+    width: 232px;
+    height: 68px;
+    border: none;
+    background-color: #ff9900;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Karla";
+    font-size: 22px;
+    font-weight: bold;
+    color: #292e36;
+  }
+  .reservation-form {
+    z-index: 1;
+    width: 806px;
+    height: 647px;
+    .reservation-form-sub-title {
+      font-size: 15px;
+      font-weight: medium;
+      font-family: "Josefin Sans";
+      line-height: 77%;
+      letter-spacing: 27%;
+      color: white;
+      border-top: 1px solid #e1b168;
+      padding-top: 9px;
+      margin-bottom: 15px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid #e1b168;
+    }
+    .name-email {
+      margin-top: 35px;
+    }
+    input {
+      padding-left: 17px;
+      color: black;
+      &::placeholder {
+        color: black;
+      }
+      font-size: 20px;
+      border: 1px solid black;
+      border-radius: 6px;
+      &:focus {
+        outline: none;
+      }
+    }
+    .person-timing-date {
+      input {
+        margin-top: 20px;
+        width: 232px;
+        height: 68px;
+        &:not(input:last-child) {
+          margin-right: 20px;
+        }
+      }
+    }
+    .name-input,
+    .email-input {
+      width: 358px;
+      height: 68px;
+    }
+    .email-input {
+      margin-left: 25px;
+    }
+    .reservation-form-title {
+      color: white;
+      font-weight: bold;
+      font-size: 40px;
+      font-family: "Karla";
+      line-height: 77%;
+    }
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+  .reservation-form-layer {
+    position: absolute;
+    z-index: 0;
+    width: 806px;
+    height: 647px;
+    background-color: white;
+    opacity: 47%;
+  }
+}
 .product {
   width: 326px;
   height: 432px;
