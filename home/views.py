@@ -15,3 +15,17 @@ class AboutPage(View):
     def get(self, request):
         context = {}
         return render(request, "home/about.html", context=context)
+
+
+class MenusListPage(View):
+    def get(self, request):
+        context = {}
+        products = Product.objects.all()[0:15].values("name", "image", "price")
+        context["products"] = products
+        return render(request, "home/menus-list.html", context=context)
+
+
+class ReservationPage(View):
+    def get(self, request):
+        context = {}
+        return render(request, "home/reservation.html", context=context)

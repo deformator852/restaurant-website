@@ -1,46 +1,5 @@
 @import "base.scss";
 
-.galary {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 100px;
-  &__image {
-    &-first {
-    }
-    &-second {
-      margin-right: 30px;
-      margin-left: 31px;
-    }
-    &-third {
-    }
-  }
-  &__images {
-    display: flex;
-  }
-
-  &__sub-title {
-    font-weight: medium;
-    font-size: 15px;
-    font-family: "Josefin Sans";
-    color: #292e36;
-    line-height: 77%;
-    letter-spacing: 27%;
-    text-align: center;
-    border-top: 1px solid #e1b168;
-    border-bottom: 1px solid #e1b168;
-    padding-top: 7px;
-    padding-bottom: 2px;
-  }
-  &__title {
-    font-size: 40px;
-    font-weight: bold;
-    font-family: "Karla";
-    line-height: 77%;
-    margin-top: 14px;
-    margin-bottom: 55px;
-  }
-}
 .team {
   display: flex;
   flex-direction: column;

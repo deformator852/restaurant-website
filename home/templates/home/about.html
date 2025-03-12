@@ -151,30 +151,6 @@
             </div>
         </div>
     </section>
-    <section class="galary">
-        <p class="galary__sub-title">GALARY</p>
-        <p class="galary__title">What We Make</p>
-        <div class="galary__images">
-            <div class="galary__image-first">
-                <div class="galary__image">
-                    <img src="{% static 'home/img/galary-image-1.png' %}" alt="">
-                </div>
-                <div style="margin-top:20px;" class="galary__image">
-                    <img src="{% static 'home/img/galary-image-2.png' %}" alt="">
-                </div>
-            </div>
-            <div class="galary__image galary__image-second">
-                <img src="{% static 'home/img/galary-image-3.png' %}" alt="">
-            </div>
-            <div class="galary__image-third">
-                <div class="galary__image">
-                    <img src="{% static 'home/img/galary-image-4.jpg' %}" alt="">
-                </div>
-                <div style="margin-top:20px;"class="galary__image">
-                    <img src="{% static 'home/img/galary-image-5.jpg' %}" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
+    {% include "home/include/galary.html" %}
     {% include "home/include/reservation-block.html" %}
 {% endblock content %}

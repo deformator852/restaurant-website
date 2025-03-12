@@ -1,0 +1,19 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% load custom_tags %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'home/css/menus-list.css' %}">
+{% endblock styles %}
+{% block content %}
+    <section class="menus-list">
+        <p class="menus-list__title">MENU</p>
+        <form class="menus-list__search" action="GET">
+            <input type="text" placeholder="Search here">
+        </form>
+        <div class="dishes">
+            {% for product in products %}
+                {% show_product product.image product.price product.name %}
+            {% endfor %}
+        </div>
+    </section>
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% load custom_tags %}
+{% block styles %}
+    <link rel="stylesheet" href='{% static "home/css/reservation.css" %}'>
+{% endblock styles %}
+{% block content %}
+    <section class="reservation">
+        <p class="reservation__sub-title">Reservation</p>
+        <p class="reservation__title">Book The Seat Now Here Easily</p>
+        <div class="reservation-form">
+            <div class="reservation-form__image">
+                <img src="{% static 'home/img/reservation-form-image.png' %}" alt="">
+            </div>
+            <div class="reservation-form__form-container">
+                <p class="reservation__sub-title">Reservation</p>
+                <p class="reservation__title">Book your table now</p>
+                <p class="reservation__text">
+                    The people, food and the prime locations make Rodich the perfect place good friends & family to come together and have great time.
+                </p>
+                <form action="POST">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <input type="phone" placeholder="Phone">
+                    <input type="text" placeholder="Date">
+                    <input type="text" placeholder="Time">
+                    <input type="text" placeholder="Person">
+                </form>
+                <button type="submit">Book a Table</button>
+            </div>
+        </div>
+    </section>
+    {% include "home/include/galary.html" %}
+{% endblock content %}

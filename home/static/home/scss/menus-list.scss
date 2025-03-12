@@ -1,0 +1,56 @@
+@import "base.scss";
+
+.menus-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1114px;
+  height: 100%;
+  margin-top: 70px;
+  margin-bottom: 60px;
+  .dishes {
+    display: grid;
+    grid-template-columns: repeat(3, 326px);
+    row-gap: 75px;
+    column-gap: 62px;
+  }
+  &__search {
+    margin-top: 55px;
+    margin-bottom: 55px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    input {
+      width: 583px;
+      height: 61px;
+      border-radius: 8px;
+      border: 1px solid #ff9900;
+      padding-left: 35px;
+      color: #ff9900;
+      font-family: "Karla";
+      font-size: 24px;
+      font-weight: light;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  &__title {
+    font-size: 15px;
+    font-family: "Josefin Sans";
+    font-weight: medium;
+    color: #292e36;
+    line-height: 77%;
+    letter-spacing: 27%;
+    border-top: 1px solid #e1b168;
+    border-bottom: 1px solid #e1b168;
+    width: 92px;
+    text-align: center;
+    padding-top: 7px;
+    padding-bottom: 3px;
+  }
+}
+.main {
+  display: flex;
+  align-items: center;
+}
