@@ -1,12 +1,12 @@
 <div class="product">
-    <a class="product-link" href="#">
+    <a class="product-link" href="{% url 'product_detail' pk=pk %}">
         <img class="product-image" src="{{ MEDIA_URL }}{{ img }}" alt="">
     </a>
     <div class="product-info">
         <p class="product-name">{{ name }}</p>
         <div class="order">
             <span class="product-price">{{ price }}</span>
-            <a class="order-product" href="#">
+            <a class="order-product" href="{% url 'product_detail' pk=pk %}">
                 <div>Order Now</div>
             </a>
         </div>

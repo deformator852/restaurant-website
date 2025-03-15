@@ -111,7 +111,7 @@
         </div>
         <div class="popular-dishes-items">
             {% for product in popular_dishes %}
-                {% show_product product.image product.price product.name %}
+                {% show_product product.image product.price product.name product.id %}
             {% endfor %}
         </div>
         <div class="see-all-dishes">See all dishes</div>

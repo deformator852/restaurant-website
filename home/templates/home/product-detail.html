@@ -1,0 +1,33 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'home/css/product-detail.css' %}">
+{% endblock styles %}
+{% block content %}
+    <section class="item">
+        <div class="item__brief">
+            <div class="item__image">
+                <img src="{{ MEDIA_URL }}{{ item.image }}" alt="">
+            </div>
+            <div class="item__text">
+                <p class="item__name">Chicken Burger</p>
+                <p class="item__price">${{ item.price }}</p>
+                <svg width="500"
+                     height="7"
+                     viewBox="0 0 594 7"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" y1="3.5" x2="590" y2="3.5" stroke="#C4C4C4" stroke-dasharray="4 4" />
+                    <circle cx="590.5" cy="3.5" r="3.5" fill="#C4C4C4" />
+                    <circle cx="3.5" cy="3.5" r="3.5" fill="#C4C4C4" />
+                </svg>
+                <p class="item__category">
+                    CATEGORY: <span>{{ item.category }}</span>
+                </p>
+                <p class="item__tags">
+                    TAGS: <span>{{ item_tags }}</span>
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

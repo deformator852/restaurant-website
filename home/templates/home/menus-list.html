@@ -12,7 +12,7 @@
         </form>
         <div class="dishes">
             {% for product in products %}
-                {% show_product product.image product.price product.name %}
+                {% show_product product.image product.price product.name product.id %}
             {% endfor %}
         </div>
     </section>

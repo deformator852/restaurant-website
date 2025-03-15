@@ -1,0 +1,45 @@
+@import "base.scss";
+
+.item {
+  margin-top: 60px;
+  &__brief {
+    display: flex;
+  }
+  &__image {
+    margin-right: 30px;
+  }
+  &__text {
+  }
+  &__category,
+  &__tags {
+    color: #e1b168;
+    font-size: 22px;
+    line-height: 214%;
+    font-weight: bold;
+    span {
+      color: #555555;
+    }
+  }
+  &__price {
+    font-weight: bold;
+    font-family: "Karla";
+    font-size: 25px;
+    color: #292e36;
+    margin-top: 4px;
+    margin-bottom: 7px;
+  }
+  &__name {
+    color: #292e36;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Karla";
+    line-height: 108%;
+    letter-spacing: 0%;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
