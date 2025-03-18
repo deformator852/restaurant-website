@@ -1,0 +1,103 @@
+@import "base.scss";
+
+.contact-us {
+  &__button {
+    button {
+      margin-top: 25px;
+      margin-bottom: 0px;
+      background-color: #ff9900;
+      width: 189px;
+      height: 68px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      border-radius: 10px;
+      color: #292e36;
+      font-size: 22px;
+      font-family: "Karla";
+      line-height: 126%;
+      font-weight: bold;
+    }
+  }
+  &__form {
+    input {
+      width: 358px;
+      height: 68px;
+      border: 1px solid #c4c4c4;
+      border-radius: 10px;
+      color: #555555;
+      font-size: 22px;
+      font-weight: medium;
+      line-height: 126%;
+      padding-left: 20px;
+      font-family: "Karla";
+      background-color: #fff6ea;
+      &:focus {
+        outline: none;
+      }
+    }
+    input[type="email"] {
+      margin-left: 25px;
+    }
+    input[type="phone"] {
+      margin-left: 25px;
+    }
+    div:not(:last-child) {
+      margin-bottom: 30px;
+    }
+    textarea {
+      resize: none;
+      background-color: #fff6ea;
+      width: 744px;
+      height: 168px;
+      border: 1px solid #c4c4c4;
+      border-radius: 10px;
+      padding-left: 14px;
+      padding-top: 14px;
+      font-size: 22px;
+      font-family: "Karla";
+      font-weight: medium;
+      line-height: 126%;
+    }
+  }
+  &__sub-title {
+    color: #292e36;
+    font-size: 15px;
+    font-weight: medium;
+    font-family: "Josefin Sans";
+    line-height: 77%;
+    letter-spacing: 27%;
+    border-top: 1px solid #e1b168;
+    border-bottom: 1px solid #e1b168;
+    padding-top: 8px;
+    padding-bottom: 3px;
+  }
+  &__title {
+    margin-top: 9px;
+    margin-bottom: 25px;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 77%;
+    color: #292e36;
+    font-family: "Karla";
+  }
+}
+.contact-us-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 930px;
+  height: 753px;
+  border-radius: 10px;
+  background-color: #fff6ea;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

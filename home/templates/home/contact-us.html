@@ -1,0 +1,25 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'home/css/contact-us.css' %}">
+{% endblock styles %}
+{% block content %}
+    <section class="contact-us-form-container">
+        <p class="contact-us__sub-title">CONTACT US</p>
+        <p class="contact-us__title">Send Valuable Feedback To Us</p>
+        <form class="contact-us__form" action="POST">
+            <div>
+                <input type="text" name="" placeholder="Name">
+                <input type="email" name="" placeholder="Email">
+            </div>
+            <div>
+                <input type="text" name="" placeholder="Subject">
+                <input type="phone" name="" placeholder="Phone">
+            </div>
+            <textarea name="" id=""  placeholder="Message"></textarea>
+            <div class="contact-us__button">
+                <button>Send</button>
+            </div>
+        </form>
+    </section>
+{% endblock content %}

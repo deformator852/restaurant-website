@@ -27,7 +27,27 @@
                 <p class="item__tags">
                     TAGS: <span>{{ item_tags }}</span>
                 </p>
+                <div class="item__order">
+                    <input type="number" value="1">
+                    <a class="item__order-button" href="#">
+                        <div>Order Now</div>
+                    </a>
+                </div>
             </div>
+        </div>
+        <div class="item__description">
+            <p class="item__description-subtitle">Description</p>
+            <svg width="965"
+                 height="6"
+                 viewBox="0 0 1200 6"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <line x1="2.33789" y1="2.61719" x2="1069.12" y2="2.61719" stroke="#C4C4C4" stroke-dasharray="4 4" />
+                <circle cx="1067.95" cy="2.72734" r="2.72734" fill="#C4C4C4" />
+                <circle cx="2.72734" cy="2.72734" r="2.72734" fill="#C4C4C4" />
+            </svg>
+            <p class="item__description-title">Description</p>
+            <p class="item__description-text">{{ item.description }}</p>
         </div>
     </section>
 {% endblock content %}

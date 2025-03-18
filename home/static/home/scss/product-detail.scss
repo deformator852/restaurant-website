@@ -2,6 +2,38 @@
 
 .item {
   margin-top: 60px;
+  margin-bottom: 60px;
+  &__description {
+    margin-top: 50px;
+    &-subtitle,
+    &-title {
+      color: #292e36;
+    }
+    &-subtitle {
+      font-size: 15px;
+      font-family: "Josefin Sans";
+      font-weight: medium;
+      line-height: 77%;
+      margin-bottom: 7px;
+      text-transform: uppercase;
+    }
+    &-title {
+      font-size: 40px;
+      margin-top: 10px;
+      font-family: "Karla";
+      font-weight: Bold;
+      line-height: 108%;
+      margin-bottom: 7px;
+    }
+    &-text {
+      width: 845px;
+      color: #555555;
+      font-size: 20px;
+      font-weight: regular;
+      line-height: 126%;
+      font-family: "Karla";
+    }
+  }
   &__brief {
     display: flex;
   }
@@ -9,6 +41,38 @@
     margin-right: 30px;
   }
   &__text {
+  }
+  &__order-button {
+    width: 232px;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #ff9900;
+    border: none;
+    font-size: 22px;
+    font-weight: medium;
+    line-height: 126%;
+    font-family: "Karla";
+    color: black;
+  }
+  &__order {
+    display: flex;
+    input {
+      margin-right: 20px;
+      width: 98px;
+      height: 68px;
+      border: 1px solid #e1b168;
+      color: #292e36;
+      font-size: 22px;
+      line-height: 126%;
+      font-family: "Josefin Sans";
+      padding-left: 36px;
+      &:focus {
+        outline: none;
+      }
+    }
   }
   &__category,
   &__tags {

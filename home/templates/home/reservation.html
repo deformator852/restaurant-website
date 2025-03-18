@@ -19,12 +19,13 @@
                     The people, food and the prime locations make Rodich the perfect place good friends & family to come together and have great time.
                 </p>
                 <form action="POST">
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="Email">
-                    <input type="phone" placeholder="Phone">
-                    <input type="text" placeholder="Date">
-                    <input type="text" placeholder="Time">
-                    <input type="text" placeholder="Person">
+                    {% csrf_token %}
+                    {{ form.name }}
+                    {{ form.email }}
+                    {{ form.phone }}
+                    {{ form.date }}
+                    {{ form.timing }}
+                    {{ form.person }}
                 </form>
                 <button type="submit">Book a Table</button>
             </div>

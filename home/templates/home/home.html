@@ -13,7 +13,7 @@
                 <p class="welcome-description">
                     Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
                 </p>
-                <a class="view-menu-button" href="#">
+                <a class="view-menu-button" href="{% url 'menu' %}">
                     <div>View Menu</div>
                 </a>
             </div>
@@ -114,7 +114,9 @@
                 {% show_product product.image product.price product.name product.id %}
             {% endfor %}
         </div>
-        <div class="see-all-dishes">See all dishes</div>
+        <a class="see-all-dishes" href="{% url 'menu' %}">
+            <div>See all dishes</div>
+        </a>
     </section>
     <section class="what-we-offer-block">
         <div class="what-we-offer-block-inner">

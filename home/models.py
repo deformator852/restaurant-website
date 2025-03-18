@@ -17,9 +17,9 @@ class Tag(models.Model):
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=100)
     description = models.CharField(max_length=1500)
-    price = models.IntegerField()
+    price = models.FloatField()
     image = models.ImageField(upload_to="photos/%Y/%m/%d")
     category = models.ForeignKey("Category", on_delete=models.CASCADE)
     tags = models.ManyToManyField("Tag")

@@ -22,7 +22,7 @@
                     <nav class="header__navigation">
                         <ul>
                             <li class="navigation-item logo">
-                                <a href="#">
+                                <a href="{% url 'home' %}">
                                     <svg width="107"
                                          height="103"
                                          viewBox="0 0 107 103"
@@ -48,24 +48,24 @@
                                 </a>
                             </li>
                             <li class="navigation-item">
-                                <a href="#">Home</a>
+                                <a href="{% url 'home' %}"
+                                   id="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
                             </li>
                             <li class="navigation-item">
-                                <a href="#">About</a>
+                                <a href="{% url 'about' %}"
+                                   id="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
                             </li>
                             <li class="navigation-item">
-                                <a href="#">Menu</a>
+                                <a href="{% url 'menu' %}"
+                                   id="{% if request.resolver_match.url_name == 'menu' %}active{% endif %}">Menu</a>
                             </li>
                             <li class="navigation-item">
-                                <a href="#">Reservation</a>
+                                <a href="{% url 'reservation' %}"
+                                   id="{% if request.resolver_match.url_name == 'reservation' %}active{% endif %}">Reservation</a>
                             </li>
                             <li class="navigation-item">
-                                <a href="#">Contact</a>
-                            </li>
-                            <li class="navigation-item login">
-                                <div class="login__inner">
-                                    <a href="#">Login</a>
-                                </div>
+                                <a href="{% url 'contact-us' %}"
+                                   id="{% if request.resolver_match.url_name == 'contact-us' %}active{% endif %}">Contact</a>
                             </li>
                         </ul>
                     </nav>
@@ -112,7 +112,7 @@
                         <p class="mailing-subtitle">Join our mailing list for updates,Get news & offers events.</p>
                         <form class="mailing" action="POST">
                             {% csrf_token %}
-                            <input class="subscribe-mailing-input" placeholder="Email" type="text">
+                            {{ email_form.email }}
                             <button class="subscribe-mailing-button" type="submit">Subscribe</button>
                         </form>
                         <div class="footer__copyright">

@@ -5,6 +5,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+#active {
+  color: #ff9900 !important;
+}
+
 .galary {
   display: flex;
   flex-direction: column;
@@ -452,21 +457,6 @@
   margin-right: 157px;
 }
 
-.login {
-  margin-left: 79px;
-  &__inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    width: 125px;
-    height: 41px;
-    background-color: #ff9900;
-  }
-  a {
-    color: black;
-  }
-}
 .header__navigation {
   ul {
     display: flex;
