@@ -5,20 +5,30 @@
 {% endblock styles %}
 {% block content %}
     <section class="contact-us-form-container">
+        {% if form.errors %}
+            <div class="form-errors">
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}<li>{{ error }}</li>{% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
         <p class="contact-us__sub-title">CONTACT US</p>
         <p class="contact-us__title">Send Valuable Feedback To Us</p>
-        <form class="contact-us__form" action="POST">
+        <form class="contact-us__form" method="POST">
+            {% csrf_token %}
             <div>
-                <input type="text" name="" placeholder="Name">
-                <input type="email" name="" placeholder="Email">
+                {{ form.name }}
+                {{ form.email }}
             </div>
             <div>
-                <input type="text" name="" placeholder="Subject">
-                <input type="phone" name="" placeholder="Phone">
+                {{ form.subject }}
+                {{ form.phone }}
             </div>
-            <textarea name="" id=""  placeholder="Message"></textarea>
+            {{ form.message }}
             <div class="contact-us__button">
-                <button>Send</button>
+                <button style="cursor: pointer;" type="submit">Send</button>
             </div>
         </form>
     </section>

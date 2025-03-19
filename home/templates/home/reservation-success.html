@@ -1,0 +1,25 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'home/css/base.css' %}">
+{% endblock styles %}
+{% block content %}
+    <section class="reservation-success">
+        <div class="reservation-success__inner">
+            <p class="reservation-success__title">Your booking is confirmed!</p>
+            <div class="reservation-success__confirm">
+                <svg width="80"
+                     height="58"
+                     viewBox="0 0 80 58"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M77.7241 2.52686C79.9214 4.72412 79.9214 8.29248 77.7241 10.4897L32.7241 55.4897C30.5269 57.687 26.9585 57.687 24.7612 55.4897L2.26123 32.9897C0.0639648 30.7925 0.0639648 27.2241 2.26123 25.0269C4.4585 22.8296 8.02686 22.8296 10.2241 25.0269L28.7515 43.5366L69.7788 2.52686C71.9761 0.32959 75.5444 0.32959 77.7417 2.52686H77.7241Z" fill="white" />
+                </svg>
+            </div>
+            <p class="reservation-success__text">Thank you for choosing us, and we look forward to welcoming you soon.</p>
+            <a class="reservation-success__back" href="{% url 'home' %}">
+                <div>Back to Home</div>
+            </a>
+        </div>
+    </section>
+{% endblock content %}

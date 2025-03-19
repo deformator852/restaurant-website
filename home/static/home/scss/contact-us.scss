@@ -40,7 +40,7 @@
     input[type="email"] {
       margin-left: 25px;
     }
-    input[type="phone"] {
+    input:last-child {
       margin-left: 25px;
     }
     div:not(:last-child) {

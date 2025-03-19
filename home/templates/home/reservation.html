@@ -18,7 +18,16 @@
                 <p class="reservation__text">
                     The people, food and the prime locations make Rodich the perfect place good friends & family to come together and have great time.
                 </p>
-                <form action="POST">
+                {% if form.errors %}
+                    <div class="form-errors">
+                        <ul>
+                            {% for field in form %}
+                                {% for error in field.errors %}<li>{{ error }}</li>{% endfor %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                <form method="POST">
                     {% csrf_token %}
                     {{ form.name }}
                     {{ form.email }}
@@ -26,8 +35,8 @@
                     {{ form.date }}
                     {{ form.timing }}
                     {{ form.person }}
+                    <button type="submit" style="cursor: pointer;">Book a Table</button>
                 </form>
-                <button type="submit">Book a Table</button>
             </div>
         </div>
     </section>

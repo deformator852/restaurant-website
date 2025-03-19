@@ -1,0 +1,16 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'home/css/base.css' %}">
+{% endblock styles %}
+{% block content %}
+    <section class="feedback-success">
+        <div class="feedback-success__inner">
+            <p class="feedback-success__title">Thank you for your valuable feedback!</p>
+            <p class="feedback-success__text">We appreciate your input and look forward to serving you again.</p>
+            <a class="feedback-success__back" href="{% url 'home' %}">
+                <div>Back to Home</div>
+            </a>
+        </div>
+    </section>
+{% endblock content %}

@@ -25,7 +25,9 @@ class FirstReservationForm(forms.Form):
     )
     date = forms.DateField(
         required=True,
-        widget=forms.TextInput(attrs={"placeholder": "Date", "class": "date-input"}),
+        widget=forms.TextInput(
+            attrs={"placeholder": "2025-03-19", "class": "date-input"}
+        ),
     )
 
 
@@ -58,7 +60,7 @@ class SecondReservationForm(forms.Form):
     )
     date = forms.DateField(
         required=True,
-        widget=forms.TextInput(attrs={"placeholder": "Date"}),
+        widget=forms.TextInput(attrs={"placeholder": "2025-03-19"}),
     )
 
 
@@ -68,4 +70,33 @@ class SubscribeMailingForm(forms.Form):
         widget=forms.EmailInput(
             attrs={"placeholder": "Email", "class": "subscribe-mailing-input"}
         ),
+    )
+
+
+class ContactForm(forms.Form):
+    name = forms.CharField(
+        max_length=100,
+        required=True,
+        widget=forms.TextInput(attrs={"placeholder": "Name"}),
+    )
+    email = forms.EmailField(
+        required=True,
+        widget=forms.EmailInput(
+            attrs={
+                "placeholder": "Email",
+            }
+        ),
+    )
+    subject = forms.CharField(
+        max_length=155,
+        required=True,
+        widget=forms.TextInput(attrs={"placeholder": "Subject"}),
+    )
+    phone = forms.CharField(
+        max_length=50,
+        required=True,
+        widget=forms.TextInput(attrs={"placeholder": "Phone"}),
+    )
+    message = forms.CharField(
+        required=True, widget=forms.Textarea(attrs={"placeholder": "Message"})
     )

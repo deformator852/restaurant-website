@@ -1,3 +1,119 @@
+.feedback-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  &__title {
+    width: 791px;
+    text-align: center;
+    color: #ff9900;
+    font-size: 48px;
+    font-family: "Karla";
+    line-height: 126%;
+    font-weight: 800;
+  }
+  &__text {
+    width: 459px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+  &__back,
+  &__text {
+    font-family: "Karla";
+    font-size: 22px;
+    line-height: 126%;
+  }
+  &__back {
+    color: #292e36;
+    font-weight: bolder;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 497px;
+      height: 68px;
+      background-color: #ff9900;
+      border-radius: 10px;
+    }
+  }
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff6ea;
+    width: 930px;
+    height: 753px;
+  }
+}
+.reservation-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  &__confirm {
+    margin-top: 27px;
+    margin-bottom: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #ff9900;
+    width: 130px;
+    height: 130px;
+  }
+  &__title {
+    color: #ff9900;
+    font-size: 48px;
+    font-family: "Karla";
+    line-height: 126%;
+    font-weight: bolder;
+  }
+  &__text {
+    width: 459px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  &__back,
+  &__text {
+    font-family: "Karla";
+    font-size: 22px;
+    line-height: 126%;
+  }
+  &__back {
+    color: #292e36;
+    font-weight: bolder;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 497px;
+      height: 68px;
+      background-color: #ff9900;
+      border-radius: 10px;
+    }
+  }
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff6ea;
+    width: 930px;
+    height: 753px;
+  }
+}
+
+.form-errors {
+  color: red;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
 *,
 *::after,
 *::before {

@@ -3,7 +3,8 @@
          style="background-image: url('{% static 'home/img/reservation-background.png' %}')">
     <div class="reservation-form-layer"></div>
     <div class="reservation-form">
-        <form method="GET">
+        <form id="reservation-form" method="POST">
+            {% csrf_token %}
             <p class="reservation-form-sub-title">RESERVATION</p>
             <p class="reservation-form-title">Book your table now</p>
             <div class="name-email">
@@ -15,7 +16,23 @@
                 {{ form.timing }}
                 {{ form.date }}
             </div>
-            <button class="book-table-button" type="submit">Book a Table</button>
+            <button style="cursor: pointer;" class="book-table-button" type="submit">Book a Table</button>
+            {% if form.errors %}
+                <div class="form-errors">
+                    <ul>
+                        {% for field in form %}
+                            {% for error in field.errors %}<li>{{ error }}</li>{% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
         </form>
     </div>
 </section>
+{% block scripts %}
+    <script>
+    window.onload = function() {
+        {% if form.errors %}document.getElementById("reservation-form").scrollIntoView({behavior: "smooth"});{% endif %}
+    }
+    </script>
+{% endblock scripts %}
