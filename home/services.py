@@ -1,3 +1,7 @@
+from django.core.mail import EmailMessage
+import os
+
+
 def create_reserve_table_message(user_data: dict):
     message = f"""
 Table Reservation Details:
@@ -24,3 +28,9 @@ Client Phone Number: {user_data.get("phone")}
 Message: {user_data.get("message")}
 """
     return message
+
+
+def send_email(subject: str, message: str) -> None:
+    admin_email = os.environ.get("email")
+    email = EmailMessage(subject, message, to=[admin_email])  # pyright:ignore
+    email.send()

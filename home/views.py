@@ -10,9 +10,7 @@ from .models import Product
 
 class ContactPage(View):
     def get(self, request):
-        context = {}
-        form = ContactForm()
-        context["form"] = form
+        context = self.get_context_data()
         return render(request, "home/contact-us.html", context=context)
 
     def post(self, request):
@@ -21,9 +19,15 @@ class ContactPage(View):
             message = create_client_feedback_message(form.cleaned_data)
             send_client_feedback.delay(message)  # pyright:ignore
             return redirect("success-feedback")
-        context = {}
-        context["form"] = form
+        context = self.get_context_data(form=form)
         return render(request, "home/contact-us.html", context=context)
+
+    def get_context_data(self, form=None):
+        context = {}
+        if form is None:
+            context["form"] = ContactForm()
+        context["form"] = form
+        return context
 
 
 class ProductDetail(View):
@@ -39,14 +43,19 @@ class ProductDetail(View):
 
 
 class HomePage(View):
-    def get(self, request):
+    def get_context_data(self, form=None):
         context = {}
-        form = ReservationForm()
+        if form is None:
+            form = ReservationForm()
+        context["form"] = form
         popular_dishes = Product.objects.all()[0:3].values(
             "id", "name", "image", "price"
         )
         context["popular_dishes"] = popular_dishes
-        context["form"] = form
+        return context
+
+    def get(self, request):
+        context = self.get_context_data()
         return render(request, "home/home.html", context=context)
 
     def post(self, request):
@@ -55,20 +64,20 @@ class HomePage(View):
             message = create_reserve_table_message(form.cleaned_data)
             send_email_for_reservation.delay(message)  # pyright:ignore
             return redirect("success-reservation")
-        context = {}
-        context["form"] = form
-        popular_dishes = Product.objects.all()[0:3].values(
-            "id", "name", "image", "price"
-        )
-        context["popular_dishes"] = popular_dishes
+        context = self.get_context_data(form)
         return render(request, "home/home.html", context=context)
 
 
 class AboutPage(View):
-    def get(self, request):
-        form = ReservationForm()
+    def get_context_data(self, form=None):
         context = {}
+        if form is None:
+            context["form"] = ReservationForm()
         context["form"] = form
+        return context
+
+    def get(self, request):
+        context = self.get_context_data()
         return render(request, "home/about.html", context=context)
 
     def post(self, request):
@@ -77,48 +86,45 @@ class AboutPage(View):
             message = create_reserve_table_message(form.cleaned_data)
             send_email_for_reservation.delay(message)  # pyright:ignore
             return redirect("success-reservation")
-        form = ReservationForm()
-        context = {}
-        context["form"] = form
+        context = self.get_context_data(form=form)
         return render(request, "home/about.html", context=context)
 
 
 class MenusListPage(View):
-    def get(self, request):
-        context = {}
-        products_list = Product.objects.all().values("id", "name", "image", "price")
-        paginator = Paginator(products_list, 15)
-        page_number = request.GET.get("page")
-        page_obj = paginator.get_page(page_number)
-        context["page_obj"] = page_obj
-        return render(request, "home/menus-list.html", context=context)
-
-    def post(self, request):
+    def get_context_data(self, request):
         context = {}
         query = request.POST.get("query", "")
-
         if query:
             products_list = Product.objects.filter(name__icontains=query).values(
                 "id", "name", "image", "price"
             )
         else:
             products_list = Product.objects.all().values("id", "name", "image", "price")
-
         paginator = Paginator(products_list, 15)
         page_number = request.GET.get("page")
         page_obj = paginator.get_page(page_number)
-
         context["page_obj"] = page_obj
-        context["query"] = query
+        return context
 
+    def get(self, request):
+        context = self.get_context_data(request)
+        return render(request, "home/menus-list.html", context=context)
+
+    def post(self, request):
+        context = self.get_context_data(request)
         return render(request, "home/menus-list.html", context)
 
 
 class ReservationPage(View):
-    def get(self, request):
-        form = SecondReservationForm()
+    def get_context_data(self, form=None):
         context = {}
+        if form is None:
+            form = SecondReservationForm()
         context["form"] = form
+        return context
+
+    def get(self, request):
+        context = self.get_context_data()
         return render(request, "home/reservation.html", context=context)
 
     def post(self, request):
@@ -127,12 +133,5 @@ class ReservationPage(View):
             message = create_reserve_table_message(form.cleaned_data)
             send_email_for_reservation.delay(message)  # pyright:ignore
             return redirect("success-reservation")
-        return render(request, "home/reservation.html", {"form": form})
-
-
-def success_reservation(request):
-    return render(request, "home/reservation-success.html")
-
-
-def success_feedback(request):
-    return render(request, "home/feedback-success.html")
+        context = self.get_context_data(form=form)
+        return render(request, "home/reservation.html", context=context)
