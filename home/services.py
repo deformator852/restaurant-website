@@ -11,3 +11,16 @@ Arrival Date: {user_data.get("date")}
     if phone := user_data.get("phone"):
         message += "Client Phone Number: " + phone
     return message
+
+
+def create_client_feedback_message(user_data: dict):
+    message = f"""
+Client Feedback:
+----------------------------
+Client Name: {user_data.get("name")}
+Client Email: {user_data.get("email")}
+Subject: {user_data.get("subject")}
+Client Phone Number: {user_data.get("phone")}
+Message: {user_data.get("message")}
+"""
+    return message

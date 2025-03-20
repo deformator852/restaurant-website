@@ -1,10 +1,10 @@
+from .tasks import send_email_for_reservation, send_client_feedback
 from django.conf import settings
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views import View
-from .services import create_reserve_table_message
-from .tasks import send_email_for_reservation
-from .forms import ContactForm, FirstReservationForm, SecondReservationForm
+from .services import create_client_feedback_message, create_reserve_table_message
+from .forms import ContactForm, ReservationForm, SecondReservationForm
 from .models import Product
 
 
@@ -18,6 +18,8 @@ class ContactPage(View):
     def post(self, request):
         form = ContactForm(request.POST)
         if form.is_valid():
+            message = create_client_feedback_message(form.cleaned_data)
+            send_client_feedback.delay(message)  # pyright:ignore
             return redirect("success-feedback")
         context = {}
         context["form"] = form
@@ -39,7 +41,7 @@ class ProductDetail(View):
 class HomePage(View):
     def get(self, request):
         context = {}
-        form = FirstReservationForm()
+        form = ReservationForm()
         popular_dishes = Product.objects.all()[0:3].values(
             "id", "name", "image", "price"
         )
@@ -48,7 +50,7 @@ class HomePage(View):
         return render(request, "home/home.html", context=context)
 
     def post(self, request):
-        form = FirstReservationForm(request.POST)
+        form = ReservationForm(request.POST)
         if form.is_valid():
             message = create_reserve_table_message(form.cleaned_data)
             send_email_for_reservation.delay(message)  # pyright:ignore
@@ -64,18 +66,18 @@ class HomePage(View):
 
 class AboutPage(View):
     def get(self, request):
-        form = FirstReservationForm()
+        form = ReservationForm()
         context = {}
         context["form"] = form
         return render(request, "home/about.html", context=context)
 
     def post(self, request):
-        form = FirstReservationForm(request.POST)
+        form = ReservationForm(request.POST)
         if form.is_valid():
             message = create_reserve_table_message(form.cleaned_data)
             send_email_for_reservation.delay(message)  # pyright:ignore
             return redirect("success-reservation")
-        form = FirstReservationForm()
+        form = ReservationForm()
         context = {}
         context["form"] = form
         return render(request, "home/about.html", context=context)

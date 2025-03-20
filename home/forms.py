@@ -1,7 +1,7 @@
 from django import forms
 
 
-class FirstReservationForm(forms.Form):
+class ReservationForm(forms.Form):
     name = forms.CharField(
         max_length=100,
         required=True,
@@ -31,36 +31,11 @@ class FirstReservationForm(forms.Form):
     )
 
 
-class SecondReservationForm(forms.Form):
-    name = forms.CharField(
-        max_length=100,
-        required=True,
-        widget=forms.TextInput(attrs={"placeholder": "Name"}),
-    )
-    email = forms.EmailField(
-        required=True,
-        widget=forms.EmailInput(
-            attrs={
-                "placeholder": "Email",
-            }
-        ),
-    )
+class SecondReservationForm(ReservationForm):
     phone = forms.CharField(
         max_length=50,
         required=True,
         widget=forms.TextInput(attrs={"placeholder": "Phone"}),
-    )
-    person = forms.DecimalField(
-        required=True,
-        widget=forms.TextInput(attrs={"placeholder": "Person"}),
-    )
-    timing = forms.TimeField(
-        required=True,
-        widget=forms.TimeInput(attrs={"placeholder": "Timing"}),
-    )
-    date = forms.DateField(
-        required=True,
-        widget=forms.TextInput(attrs={"placeholder": "2025-03-19"}),
     )
 
 
