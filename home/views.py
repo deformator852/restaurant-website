@@ -1,6 +1,9 @@
 from django.conf import settings
+from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views import View
+from .services import create_reserve_table_message
+from .tasks import send_email_for_reservation
 from .forms import ContactForm, FirstReservationForm, SecondReservationForm
 from .models import Product
 
@@ -47,6 +50,8 @@ class HomePage(View):
     def post(self, request):
         form = FirstReservationForm(request.POST)
         if form.is_valid():
+            message = create_reserve_table_message(form.cleaned_data)
+            send_email_for_reservation.delay(message)  # pyright:ignore
             return redirect("success-reservation")
         context = {}
         context["form"] = form
@@ -64,13 +69,47 @@ class AboutPage(View):
         context["form"] = form
         return render(request, "home/about.html", context=context)
 
+    def post(self, request):
+        form = FirstReservationForm(request.POST)
+        if form.is_valid():
+            message = create_reserve_table_message(form.cleaned_data)
+            send_email_for_reservation.delay(message)  # pyright:ignore
+            return redirect("success-reservation")
+        form = FirstReservationForm()
+        context = {}
+        context["form"] = form
+        return render(request, "home/about.html", context=context)
+
 
 class MenusListPage(View):
     def get(self, request):
         context = {}
-        products = Product.objects.all()[0:15].values("id", "name", "image", "price")
-        context["products"] = products
+        products_list = Product.objects.all().values("id", "name", "image", "price")
+        paginator = Paginator(products_list, 15)
+        page_number = request.GET.get("page")
+        page_obj = paginator.get_page(page_number)
+        context["page_obj"] = page_obj
         return render(request, "home/menus-list.html", context=context)
+
+    def post(self, request):
+        context = {}
+        query = request.POST.get("query", "")
+
+        if query:
+            products_list = Product.objects.filter(name__icontains=query).values(
+                "id", "name", "image", "price"
+            )
+        else:
+            products_list = Product.objects.all().values("id", "name", "image", "price")
+
+        paginator = Paginator(products_list, 15)
+        page_number = request.GET.get("page")
+        page_obj = paginator.get_page(page_number)
+
+        context["page_obj"] = page_obj
+        context["query"] = query
+
+        return render(request, "home/menus-list.html", context)
 
 
 class ReservationPage(View):
@@ -83,7 +122,8 @@ class ReservationPage(View):
     def post(self, request):
         form = SecondReservationForm(request.POST)
         if form.is_valid():
-            print(form.cleaned_data)
+            message = create_reserve_table_message(form.cleaned_data)
+            send_email_for_reservation.delay(message)  # pyright:ignore
             return redirect("success-reservation")
         return render(request, "home/reservation.html", {"form": form})
 

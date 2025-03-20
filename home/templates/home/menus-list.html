@@ -7,13 +7,35 @@
 {% block content %}
     <section class="menus-list">
         <p class="menus-list__title">MENU</p>
-        <form class="menus-list__search" action="GET">
-            <input type="text" placeholder="Search here">
+        <form class="menus-list__search" method="POST">
+            {% csrf_token %}
+            <input name="query" id="search-input" type="text" placeholder="Search here">
         </form>
         <div class="dishes">
-            {% for product in products %}
+            {% for product in page_obj %}
                 {% show_product product.image product.price product.name product.id %}
             {% endfor %}
         </div>
+        <div class="pagination">
+            <span class="step-links">
+                {% for num in page_obj.paginator.page_range %}
+                    {% if num == page_obj.number %}
+                        <span class="current">{{ num }}</span>
+                    {% else %}
+                        <a href="?page={{ num }}">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}
+            </span>
+        </div>
     </section>
 {% endblock content %}
+{% block scripts %}
+    <script>document.getElementById("search-input").addEventListener("keypress",
+        function(event){    
+            if (event.key === "Enter") {
+                event.preventDefault();
+                this.form.submit()
+            }
+        })
+    </script>
+{% endblock scripts %}
